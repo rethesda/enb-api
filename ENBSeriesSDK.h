@@ -127,6 +127,7 @@ namespace ENB_SDK
 	//may spawn or to be deleted when user modifying shaders, so highly recommended to call it inside callback function.
 	//For shader variables set filename=NULL
 	typedef bool (*_ENBGetParameter)(char* filename, char* category, char* keyname, ENBParameter* outparam);
+	typedef bool (*_ENBGetParameterA)(const char* filename, const char* category, const char* keyname, ENBParameter* outparam);
 
 	//Set value of parameter
 	//Input "filename" could be NULL to access shader variables instead of configuration files
@@ -137,6 +138,7 @@ namespace ENB_SDK
 	//so it's highly recommended to warn users about that.
 	//For shader variables set filename=NULL
 	typedef bool (*_ENBSetParameter)(char* filename, char* category, char* keyname, ENBParameter* inparam);
+	typedef bool (*_ENBSetParameterA)(char* filename, const char* category, const char* keyname, ENBParameter* inparam);
 
 	//v1001:
 	//Receive various objects for advanced programming
